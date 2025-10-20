@@ -1,0 +1,9 @@
+# vim: ft=neomuttrc
+
+color sidebar_new red default
+
+bind index B sidebar-toggle-visible
+
+bind index \Cj sidebar-next
+bind index \Ck sidebar-prev
+bind index \Co sidebar-open

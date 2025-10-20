@@ -1,0 +1,47 @@
+# Don't move read mail anywhere
+set move=no
+
+# Or mark old, no one cares
+set nomark_old
+
+## These could be moved to mutt_local but cba really
+# Read Maildir
+set spool_file=~/mail/Maildir
+set folder=~/mail
+set mbox_type=Maildir
+
+# Misc Mailboxen
+set record=~/mail/sent-mail
+set postponed=~/mail/postponed
+
+mailboxes `echo $HOME/mail/*`
+
+# Fix replies
+set include=yes
+set indent_string=">"
+set reply_regex="^((re|aw|sv|vs)(\[[0-9]+\])*:[ \t]*)*"
+
+set use_8bit_mime
+set allow_8bit
+set charset="utf-8"
+
+# Editing yay
+set editor="nvim -c 'set tw=78' +"
+set edit_headers
+
+# XXX: seems like the only way to open html email in neomutt
+auto_view text/html
+
+# Misc
+unset markers
+
+source mutt_gpg_rc
+source mutt_mu
+source mutt_pager
+source mutt_spam
+
+## Here's some things
+# set from=
+# set real_name=
+# set pgp_sign_as=
+source mutt_local

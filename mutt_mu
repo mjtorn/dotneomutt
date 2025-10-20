@@ -1,0 +1,17 @@
+# vim: ft=neomuttrc
+
+# Use mu
+# Create/refresh a Maildir of symlinks with your query (press F8, type query, Enter)
+macro index <F8> "<shell-escape>mu find --clearlinks --format=links --linksdir=~/.cache/mu/mutt-search " "mu find"
+
+# Open the results (press F9)
+macro index <F9> "<change-folder-readonly>~/.cache/mu/mutt-search" "mu find results"
+
+# XXX: X is not bound and I think I want "l ~N" style functionality, and regular search ofc, so "eXtended search" maybe
+macro index X "<shell-escape>mkdir -p ~/.cache/mu/mutt-search; \
+bash -lc 'printf \"mu: \" > /dev/tty; IFS= read -r q < /dev/tty; \
+mu find --clearlinks --linksdir=\"$HOME/.cache/mu/mutt-search\" --format=links -- \"$q\"' <enter>\
+<change-folder-readonly>~/.cache/mu/mutt-search<enter>" \
+"Search mail with mu (virtual Maildir)"
+
+
