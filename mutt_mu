@@ -14,4 +14,4 @@ mu find --clearlinks --linksdir=\"$HOME/.cache/mu/mutt-search\" --format=links -
 <change-folder-readonly>~/.cache/mu/mutt-search<enter>" \
 "Search mail with mu (virtual Maildir)"
 
-
+macro index I "<shell-escape>mu index<enter>"
