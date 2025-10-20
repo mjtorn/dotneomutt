@@ -25,6 +25,12 @@ set use_8bit_mime
 set allow_8bit
 set charset="utf-8"
 
+# Try to make forwarding somewhat sane, yet html is either as text or at least protonmail doesn't get the .eml attachment
+set mime_forward=ask-yes
+unset forward_decode
+unset mime_forward_decode
+set forward_format="Fwd: %s"
+
 # Editing yay
 set editor="nvim -c 'set tw=78' +"
 set edit_headers
